@@ -9,15 +9,16 @@
 <body>
 
   <nav>
-    <h1>YourName</h1>
+    <h1>RJS</h1>
     <div>
       <a href="#projects">Projects</a>
       <a href="#stack">Stack</a>
       <a href="#contact">Contact</a>
+      <button id="toggle">🌙</button>
     </div>
   </nav>
 
-  <header>
+  <header class="fade">
     <p class="tag">// Software Engineer</p>
     <h2>I build things that work — and scale.</h2>
     <p class="sub">
@@ -28,21 +29,29 @@
   <section id="projects">
     <h3>Selected Work</h3>
 
-    <div class="card">
+    <div class="card fade">
       <h4>Project One</h4>
       <p>Short description of what it does and why it matters.</p>
       <span>HTML • CSS • JS</span>
+      <div class="links">
+        <a href="#" target="_blank">Live Demo</a>
+        <a href="#" target="_blank">GitHub</a>
+      </div>
     </div>
 
-    <div class="card">
+    <div class="card fade">
       <h4>Project Two</h4>
       <p>Another project with real impact or learning.</p>
       <span>React • API</span>
+      <div class="links">
+        <a href="#" target="_blank">Live Demo</a>
+        <a href="#" target="_blank">GitHub</a>
+      </div>
     </div>
 
   </section>
 
-  <section id="stack">
+  <section id="stack" class="fade">
     <h3>Tech Stack</h3>
     <div class="stack">
       <span>JavaScript</span>
@@ -53,7 +62,7 @@
     </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="fade">
     <h3>Contact</h3>
     <p>Email: rogeliojrsuganob@email.com</p>
     <p>GitHub: github.com/RogelioJrSuganob</p>
@@ -63,4 +72,6 @@
     <p>© 2026 Rogelio Jr. Suganob</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
+</html>
