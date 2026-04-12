@@ -6,12 +6,6 @@
   <title>Rogelio Jr. Suganob | Software Engineer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
-<script src="https://unpkg.com/lucide@latest"></script>
-<script>
-  lucide.createIcons();
-</script>
-
 <body>
 
   <nav>
@@ -32,44 +26,96 @@
     </p>
   </header>
 
+  <!-- PROJECTS -->
   <section id="projects">
-    <h3>Selected Work</h3>
-
-    <div class="card fade">
-      <h4>QueueFlow</h4>
-     <p>
-      Built a real-time queue management system that simulates how service counters in banks or offices handle customer flow. The application features an admin panel for controlling queue progression and dynamically managing service windows, alongside customer and display views that update instantly across devices using WebSockets. It includes session-based admin authentication, a proper reset state, and a fully responsive, centered UI. Developed with React, Node.js, Express, and Socket.IO, the project focuses on real-world behavior, multi-client synchronization, and clean user experience design.
-     </p>
-      <span>HTML • CSS • JS • React • WebSocket API</span>
-      <div class="links">
-        <a href="https://queue-system-pi.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-        <a href="https://github.com/RogelioJrSuganob/queue-system" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </div>
+    <div class="section-header">
+      <h3>Selected Work</h3>
+      <p class="sub">A collection of projects across web, embedded systems, and apps.</p>
     </div>
 
-    <div class="card fade">
-      <h4>Project Two</h4>
-      <p>Another project with real impact or learning.</p>
-      <span>React • API</span>
-      <div class="links">
-        <a href="#" target="_blank" rel="noopener noreferrer">Live Demo</a>
-        <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </div>
-    </div>
+    <div class="project-grid">
 
+      <div class="project-card fade">
+        <div class="project-top">
+          <span class="badge">Web</span>
+          <h4>QueueFlow</h4>
+        </div>
+
+        <p>
+          Real-time queue system with live updates, admin controls,
+          and responsive UI.
+        </p>
+
+        <div class="tech">
+          <span>React</span>
+          <span>Node.js</span>
+          <span>Socket.IO</span>
+        </div>
+
+        <div class="links">
+          <a href="https://queue-system-pi.vercel.app/" target="_blank" rel="noopener noreferrer">Live</a>
+          <a href="https://github.com/RogelioJrSuganob/queue-system" target="_blank" rel="noopener noreferrer">Code</a>
+        </div>
+      </div>
+
+      <div class="project-card fade">
+        <div class="project-top">
+          <span class="badge">Embedded</span>
+          <h4>Smart Sensor System</h4>
+        </div>
+
+        <p>Microcontroller-based automation system using sensors.</p>
+
+        <div class="tech">
+          <span>C</span>
+          <span>Arduino</span>
+        </div>
+      </div>
+
+      <div class="project-card fade">
+        <div class="project-top">
+          <span class="badge">App</span>
+          <h4>Mobile App</h4>
+        </div>
+
+        <p>Cross-platform mobile app with modern UI.</p>
+
+        <div class="tech">
+          <span>React Native</span>
+        </div>
+      </div>
+
+    </div>
   </section>
 
+  <!-- STACK -->
   <section id="stack" class="fade">
     <h3>Tech Stack</h3>
-    <div class="stack">
-      <span>JavaScript</span>
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>React</span>
-      <span>Node.js</span>
+
+    <div class="stack-columns">
+      <div class="stack-col">
+        <h4>Web</h4>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>React</span>
+        <span>Node.js</span>
+      </div>
+
+      <div class="stack-col">
+        <h4>Embedded</h4>
+        <span>C</span>
+        <span>Arduino</span>
+      </div>
+
+      <div class="stack-col">
+        <h4>Apps</h4>
+        <span>React Native</span>
+      </div>
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact" class="fade">
     <div class="section-header">
       <h3>Contact</h3>
@@ -82,8 +128,8 @@
       <div class="contact-item">
         <i data-lucide="mail"></i>
         <div class="info">
-          <strong>Email</strong>
-          <p id="email-text">rogeliojrsuganob@email.com</p>
+          <span class="label">Email</span>
+          <span id="email-text" class="value">rogeliojrsuganob@email.com</span>
         </div>
         <button class="copy-btn" onclick="copyEmail()">Copy</button>
       </div>
@@ -95,8 +141,8 @@
         class="contact-item">
         <i data-lucide="github"></i>
         <div class="info">
-          <strong>GitHub</strong>
-          <p>github.com/RogelioJrSuganob</p>
+          <span class="label">GitHub</span>
+          <span class="value">github.com/RogelioJrSuganob</span>
         </div>
       </a>
 
@@ -107,8 +153,8 @@
         class="contact-item">
         <i data-lucide="linkedin"></i>
         <div class="info">
-          <strong>LinkedIn</strong>
-          <p>linkedin.com/in/rogelio-jr-suganob</p>
+          <span class="label">LinkedIn</span>
+          <span class="value">linkedin.com/in/rogelio-suganob</span>
         </div>
       </a>
 
@@ -119,8 +165,8 @@
         class="contact-item">
         <i data-lucide="facebook"></i>
         <div class="info">
-          <strong>Facebook</strong>
-          <p>facebook.com/rogelio.suganob.10</p>
+          <span class="label">Facebook</span>
+          <span class="value">facebook.com/rogelio.suganob.10</span>
         </div>
       </a>
 
@@ -131,8 +177,8 @@
         class="contact-item">
         <i data-lucide="twitter"></i>
         <div class="info">
-          <strong>X</strong>
-          <p>x.com/RogSuganob</p>
+          <span class="label">X</span>
+          <span class="value">x.com/RogSuganob</span>
         </div>
       </a>
 
@@ -143,8 +189,8 @@
         class="contact-item">
         <i data-lucide="instagram"></i>
         <div class="info">
-          <strong>Instagram</strong>
-          <p>instagram.com/rogsuganob</p>
+          <span class="label">Instagram</span>
+          <span class="value">instagram.com/rogsuganob</span>
         </div>
       </a>
 
@@ -156,5 +202,12 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+
 </body>
 </html>

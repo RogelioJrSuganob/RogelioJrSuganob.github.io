@@ -1,4 +1,4 @@
-// Simple smooth scroll
+// Smooth scroll
 document.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", e => {
     if (link.hash !== "") {
@@ -16,7 +16,7 @@ toggle.addEventListener("click", () => {
   document.body.classList.toggle("light");
 });
 
-// Fade-in on scroll
+// Fade-in animation
 const faders = document.querySelectorAll(".fade");
 
 const observer = new IntersectionObserver(entries => {
@@ -29,15 +29,13 @@ const observer = new IntersectionObserver(entries => {
 
 faders.forEach(el => observer.observe(el));
 
+// Copy email
 function copyEmail() {
   const email = document.getElementById("email-text").innerText;
 
   navigator.clipboard.writeText(email).then(() => {
     const btn = document.querySelector(".copy-btn");
     btn.innerText = "Copied!";
-    
-    setTimeout(() => {
-      btn.innerText = "Copy";
-    }, 1500);
+    setTimeout(() => btn.innerText = "Copy", 1500);
   });
 }
