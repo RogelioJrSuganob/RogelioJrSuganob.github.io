@@ -9,59 +9,71 @@
 
 <body>
 
+  <!-- NAV -->
   <nav>
     <h1>RJS</h1>
     <div>
-      <a href="#projects">Projects</a>
-      <a href="#stack">Stack</a>
+      <a href="#work">Work</a>
       <a href="#contact">Contact</a>
       <button id="toggle">🌙</button>
     </div>
   </nav>
 
+  <!-- HERO -->
   <header class="fade">
     <p class="tag">// Software Engineer</p>
-    <h2>I build things that work — and scale.</h2>
+    <h2>I build systems that are fast, scalable, and reliable.</h2>
     <p class="sub">
-      Focused on clean code, performance, and real-world problem solving.
+      Web • Embedded Systems • Mobile Applications
     </p>
   </header>
 
-  <!-- PROJECTS -->
-  <section id="projects">
+  <!-- WORK -->
+  <section id="work" class="fade">
     <div class="section-header">
       <h3>Selected Work</h3>
-      <p class="sub">A collection of projects across web, embedded systems, and apps.</p>
+      <p class="sub">Focused across multiple domains.</p>
     </div>
 
-    <div class="project-grid">
-      <div class="project-card fade">
-        <span class="badge">Web</span>
-        <h4>QueueFlow</h4>
-        <p>Real-time queue system with live updates and admin controls.</p>
+    <div class="work-columns">
 
-        <div class="tech">
-          <span>React</span>
-          <span>Node.js</span>
-          <span>Socket.IO</span>
-        </div>
-
-        <div class="links">
-          <a href="https://queue-system-pi.vercel.app/" target="_blank" rel="noopener noreferrer">Live</a>
-          <a href="https://github.com/RogelioJrSuganob/queue-system" target="_blank" rel="noopener noreferrer">Code</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STACK -->
-  <section id="stack" class="fade">
-    <h3>Tech Stack</h3>
-    <div class="stack-columns">
-      <div class="stack-col">
+      <!-- WEB -->
+      <div class="work-col">
         <h4>Web</h4>
-        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span>
+
+        <div class="work-card">
+          <h5>QueueFlow</h5>
+          <p>Real-time queue system with live updates.</p>
+          <div class="links">
+            <a href="https://queue-system-pi.vercel.app/" target="_blank" rel="noopener noreferrer">Live</a>
+            <a href="https://github.com/RogelioJrSuganob/queue-system" target="_blank" rel="noopener noreferrer">Code</a>
+          </div>
+        </div>
+
       </div>
+
+      <!-- EMBEDDED -->
+      <div class="work-col">
+        <h4>Embedded</h4>
+
+        <div class="work-card">
+          <h5>Smart Sensor</h5>
+          <p>Microcontroller automation with real-time monitoring.</p>
+        </div>
+
+      </div>
+
+      <!-- MOBILE -->
+      <div class="work-col">
+        <h4>Mobile</h4>
+
+        <div class="work-card">
+          <h5>Mobile App</h5>
+          <p>Cross-platform mobile UI with React Native.</p>
+        </div>
+
+      </div>
+
     </div>
   </section>
 
@@ -69,43 +81,41 @@
   <section id="contact" class="fade">
     <div class="section-header">
       <h3>Contact</h3>
-      <p class="sub">Let’s connect or work together.</p>
+      <p class="sub">Let’s build something great.</p>
     </div>
 
-    <div class="contact-card icon-only">
+    <div class="contact-dock">
 
-      <button type="button"
-              class="contact-icon"
-              onclick="copyEmail(this)"
-              aria-label="Copy email"
-              data-label="Email">
+      <button class="icon-btn" onclick="copyEmail(this)" aria-label="Email" data-label="Email">
         <i data-lucide="mail"></i>
       </button>
 
-      <a href="https://github.com/RogelioJrSuganob"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="contact-icon"
-         aria-label="GitHub"
-         data-label="GitHub">
+      <a href="https://github.com/RogelioJrSuganob" target="_blank" rel="noopener noreferrer"
+         class="icon-btn" aria-label="GitHub" data-label="GitHub">
         <i data-lucide="github"></i>
       </a>
 
       <a href="https://www.linkedin.com/in/rogelio-suganob-jr-75b82a239/"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="contact-icon"
-         aria-label="LinkedIn"
-         data-label="LinkedIn">
+         target="_blank" rel="noopener noreferrer"
+         class="icon-btn" aria-label="LinkedIn" data-label="LinkedIn">
         <i data-lucide="linkedin"></i>
       </a>
 
+      <a href="https://www.facebook.com/rogelio.suganob.10"
+         target="_blank" rel="noopener noreferrer"
+         class="icon-btn" aria-label="Facebook" data-label="Facebook">
+        <i data-lucide="facebook"></i>
+      </a>
+
+      <a href="https://www.instagram.com/rogsuganob/"
+         target="_blank" rel="noopener noreferrer"
+         class="icon-btn" aria-label="Instagram" data-label="Instagram">
+        <i data-lucide="instagram"></i>
+      </a>
+
       <a href="https://x.com/RogSuganob"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="contact-icon"
-         aria-label="X"
-         data-label="X">
+         target="_blank" rel="noopener noreferrer"
+         class="icon-btn" aria-label="X" data-label="X">
         <i data-lucide="twitter"></i>
       </a>
 
@@ -118,7 +128,6 @@
 
   <script src="script.js"></script>
 
-  <!-- FIXED: Proper icon loading -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     window.addEventListener("DOMContentLoaded", () => {
