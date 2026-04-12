@@ -6,6 +6,12 @@
   <title>Rogelio Jr. Suganob | Software Engineer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
+
 <body>
 
   <nav>
@@ -27,47 +33,154 @@
   </header>
 
   <section id="projects">
-    <h3>Selected Work</h3>
-
-    <div class="card fade">
-      <h4>QueueFlow</h4>
-     <p>
-      Built a real-time queue management system that simulates how service counters in banks or offices handle customer flow. The application features an admin panel for controlling queue progression and dynamically managing service windows, alongside customer and display views that update instantly across devices using WebSockets. It includes session-based admin authentication, a proper reset state, and a fully responsive, centered UI. Developed with React, Node.js, Express, and Socket.IO, the project focuses on real-world behavior, multi-client synchronization, and clean user experience design.
-     </p>
-      <span>HTML • CSS • JS • React • WebSocket API</span>
-      <div class="links">
-        <a href="https://queue-system-pi.vercel.app/" target="_blank">Live Demo</a>
-        <a href="https://github.com/RogelioJrSuganob/queue-system" target="_blank">GitHub</a>
-      </div>
+    <div class="section-header">
+      <h3>Selected Work</h3>
+      <p class="sub">A collection of projects across web, embedded systems, and apps.</p>
     </div>
 
-    <div class="card fade">
-      <h4>Project Two</h4>
-      <p>Another project with real impact or learning.</p>
-      <span>React • API</span>
-      <div class="links">
-        <a href="#" target="_blank">Live Demo</a>
-        <a href="#" target="_blank">GitHub</a>
+    <div class="project-grid">
+
+      <!-- Web -->
+      <div class="project-card fade">
+        <div class="project-top">
+          <span class="badge">Web</span>
+          <h4>QueueFlow</h4>
+        </div>
+
+        <p>
+          Real-time queue system with live multi-device updates,
+          admin controls, and clean UX built for real-world scenarios.
+        </p>
+
+        <div class="tech">
+          <span>React</span>
+          <span>Node.js</span>
+          <span>Socket.IO</span>
+        </div>
+
+        <div class="links">
+          <a href="https://queue-system-pi.vercel.app/" target="_blank" rel="noopener noreferrer">Live</a>
+          <a href="https://github.com/RogelioJrSuganob/queue-system" target="_blank" rel="noopener noreferrer">Code</a>
+        </div>
       </div>
-    </div>
 
-  </section>
+      <!-- Embedded -->
+      <div class="project-card fade">
+        <div class="project-top">
+          <span class="badge">Embedded</span>
+          <h4>Smart Sensor System</h4>
+        </div>
 
-  <section id="stack" class="fade">
-    <h3>Tech Stack</h3>
-    <div class="stack">
-      <span>JavaScript</span>
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>React</span>
-      <span>Node.js</span>
+        <p>
+          Microcontroller-based automation system using sensors
+          for real-time monitoring and control.
+        </p>
+
+        <div class="tech">
+          <span>C</span>
+          <span>Arduino</span>
+        </div>
+      </div>
+
+      <!-- Apps -->
+      <div class="project-card fade">
+        <div class="project-top">
+          <span class="badge">App</span>
+          <h4>Mobile App</h4>
+        </div>
+
+        <p>
+          Cross-platform mobile app with modern UI and API integration.
+        </p>
+
+        <div class="tech">
+          <span>React Native</span>
+          <span>API</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <section id="contact" class="fade">
-    <h3>Contact</h3>
-    <p>Email: rogeliojrsuganob@email.com</p>
-    <p>GitHub: github.com/RogelioJrSuganob</p>
+    <div class="section-header">
+      <h3>Contact</h3>
+      <p class="sub">Let’s connect or work together.</p>
+    </div>
+
+    <div class="contact-card">
+
+      <!-- Email -->
+      <div class="contact-item">
+        <i data-lucide="mail"></i>
+        <div class="info">
+          <strong>Email</strong>
+          <p id="email-text">rogeliojrsuganob@email.com</p>
+        </div>
+        <button class="copy-btn" onclick="copyEmail()">Copy</button>
+      </div>
+
+      <!-- GitHub -->
+      <a href="https://github.com/RogelioJrSuganob"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-item">
+        <i data-lucide="github"></i>
+        <div class="info">
+          <strong>GitHub</strong>
+          <p>github.com/RogelioJrSuganob</p>
+        </div>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-item">
+        <i data-lucide="linkedin"></i>
+        <div class="info">
+          <strong>LinkedIn</strong>
+          <p>linkedin.com/in/yourname</p>
+        </div>
+      </a>
+
+      <!-- Facebook -->
+      <a href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-item">
+        <i data-lucide="facebook"></i>
+        <div class="info">
+          <strong>Facebook</strong>
+          <p>facebook.com/yourprofile</p>
+        </div>
+      </a>
+
+      <!-- X -->
+      <a href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-item">
+        <i data-lucide="twitter"></i>
+        <div class="info">
+          <strong>X</strong>
+          <p>x.com/yourusername</p>
+        </div>
+      </a>
+
+      <!-- Instagram -->
+      <a href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-item">
+        <i data-lucide="instagram"></i>
+        <div class="info">
+          <strong>Instagram</strong>
+          <p>instagram.com/yourusername</p>
+        </div>
+      </a>
+
+    </div>
   </section>
 
   <footer>
