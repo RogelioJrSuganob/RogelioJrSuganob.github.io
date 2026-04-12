@@ -31,11 +31,9 @@ faders.forEach(el => observer.observe(el));
 
 // Copy email
 function copyEmail() {
-  const email = document.getElementById("email-text").innerText;
+  const email = "rogeliojrsuganob@email.com";
 
   navigator.clipboard.writeText(email).then(() => {
-    const btn = document.querySelector(".copy-btn");
-    btn.innerText = "Copied!";
-    setTimeout(() => btn.innerText = "Copy", 1500);
+    alert("Email copied!");
   });
 }
