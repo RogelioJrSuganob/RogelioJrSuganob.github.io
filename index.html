@@ -7,11 +7,6 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<script src="https://unpkg.com/lucide@latest"></script>
-<script>
-  lucide.createIcons();
-</script>
-
 <body>
 
   <nav>
@@ -40,17 +35,10 @@
     </div>
 
     <div class="project-grid">
-
       <div class="project-card fade">
-        <div class="project-top">
-          <span class="badge">Web</span>
-          <h4>QueueFlow</h4>
-        </div>
-
-        <p>
-          Real-time queue system with live updates, admin controls,
-          and responsive UI.
-        </p>
+        <span class="badge">Web</span>
+        <h4>QueueFlow</h4>
+        <p>Real-time queue system with live updates and admin controls.</p>
 
         <div class="tech">
           <span>React</span>
@@ -63,60 +51,16 @@
           <a href="https://github.com/RogelioJrSuganob/queue-system" target="_blank" rel="noopener noreferrer">Code</a>
         </div>
       </div>
-
-      <div class="project-card fade">
-        <div class="project-top">
-          <span class="badge">Embedded</span>
-          <h4>Smart Sensor System</h4>
-        </div>
-
-        <p>Microcontroller-based automation system using sensors.</p>
-
-        <div class="tech">
-          <span>C</span>
-          <span>Arduino</span>
-        </div>
-      </div>
-
-      <div class="project-card fade">
-        <div class="project-top">
-          <span class="badge">App</span>
-          <h4>Mobile App</h4>
-        </div>
-
-        <p>Cross-platform mobile app with modern UI.</p>
-
-        <div class="tech">
-          <span>React Native</span>
-        </div>
-      </div>
-
     </div>
   </section>
 
   <!-- STACK -->
   <section id="stack" class="fade">
     <h3>Tech Stack</h3>
-
     <div class="stack-columns">
       <div class="stack-col">
         <h4>Web</h4>
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>React</span>
-        <span>Node.js</span>
-      </div>
-
-      <div class="stack-col">
-        <h4>Embedded</h4>
-        <span>C</span>
-        <span>Arduino</span>
-      </div>
-
-      <div class="stack-col">
-        <h4>Apps</h4>
-        <span>React Native</span>
+        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span>
       </div>
     </div>
   </section>
@@ -130,54 +74,39 @@
 
     <div class="contact-card icon-only">
 
-      <!-- Email -->
-      <button type="button" class="contact-icon" onclick="copyEmail()" title="Copy Email" aria-label="Copy Email">
+      <button type="button"
+              class="contact-icon"
+              onclick="copyEmail(this)"
+              aria-label="Copy email"
+              data-label="Email">
         <i data-lucide="mail"></i>
       </button>
 
-      <!-- GitHub -->
       <a href="https://github.com/RogelioJrSuganob"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="contact-icon"
-        aria-label="GitHub">
+         target="_blank"
+         rel="noopener noreferrer"
+         class="contact-icon"
+         aria-label="GitHub"
+         data-label="GitHub">
         <i data-lucide="github"></i>
       </a>
 
-      <!-- LinkedIn -->
       <a href="https://www.linkedin.com/in/rogelio-suganob-jr-75b82a239/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="contact-icon"
-        aria-label="LinkedIn">
+         target="_blank"
+         rel="noopener noreferrer"
+         class="contact-icon"
+         aria-label="LinkedIn"
+         data-label="LinkedIn">
         <i data-lucide="linkedin"></i>
       </a>
 
-      <!-- Facebook -->
-      <a href="https://www.facebook.com/rogelio.suganob.10"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="contact-icon"
-        aria-label="Facebook">
-        <i data-lucide="facebook"></i>
-      </a>
-
-      <!-- X -->
       <a href="https://x.com/RogSuganob"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="contact-icon"
-        aria-label="X">
+         target="_blank"
+         rel="noopener noreferrer"
+         class="contact-icon"
+         aria-label="X"
+         data-label="X">
         <i data-lucide="twitter"></i>
-      </a>
-
-      <!-- Instagram -->
-      <a href="https://www.instagram.com/rogsuganob/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="contact-icon"
-        aria-label="Instagram">
-        <i data-lucide="instagram"></i>
       </a>
 
     </div>
@@ -189,10 +118,12 @@
 
   <script src="script.js"></script>
 
-  <!-- Lucide Icons -->
+  <!-- FIXED: Proper icon loading -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
-    lucide.createIcons();
+    window.addEventListener("DOMContentLoaded", () => {
+      lucide.createIcons();
+    });
   </script>
 
 </body>

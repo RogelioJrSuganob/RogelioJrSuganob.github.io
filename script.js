@@ -10,15 +10,12 @@ document.querySelectorAll("a").forEach(link => {
   });
 });
 
-// Dark / Light toggle
-const toggle = document.getElementById("toggle");
-toggle.addEventListener("click", () => {
+// Dark mode
+document.getElementById("toggle").onclick = () => {
   document.body.classList.toggle("light");
-});
+};
 
-// Fade-in animation
-const faders = document.querySelectorAll(".fade");
-
+// Fade animation
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -26,14 +23,16 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 });
+document.querySelectorAll(".fade").forEach(el => observer.observe(el));
 
-faders.forEach(el => observer.observe(el));
-
-// Copy email
-function copyEmail() {
+// Copy email (clean UX)
+function copyEmail(btn) {
   const email = "rogeliojrsuganob@email.com";
 
   navigator.clipboard.writeText(email).then(() => {
-    alert("Email copied!");
+    btn.setAttribute("data-label", "Copied!");
+    setTimeout(() => {
+      btn.setAttribute("data-label", "Email");
+    }, 1500);
   });
 }

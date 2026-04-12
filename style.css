@@ -312,66 +312,44 @@ footer {
   margin-top: 1.5rem;
 }
 
-/* FIX: force proper sizing */
+/* ICON STYLE */
 .contact-icon {
-  width: 48px;
-  height: 48px;
-
-  display: inline-flex; /* IMPORTANT */
-  align-items: center;
-  justify-content: center;
-
   border: 1px solid #222;
   border-radius: 12px;
   background: #0f1117;
-
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-
+  transition: all 0.25s ease;
   position: relative;
-
-  /* FIX: prevent stretching */
-  flex: 0 0 auto;
-  padding: 0; /* remove default button padding */
 }
 
-/* Hover */
 .contact-icon:hover {
   transform: translateY(-4px);
   border-color: #444;
 }
 
-/* Icon */
+/* ICON */
 .contact-icon i {
   width: 20px;
   height: 20px;
   color: #888;
-  transition: 0.25s;
 }
 
 .contact-icon:hover i {
   color: #fff;
 }
 
-/* Tooltip */
+/* TOOLTIP */
 .contact-icon::after {
   content: attr(data-label);
   position: absolute;
-  bottom: -30px;
-
+  bottom: -28px;
   font-size: 0.75rem;
   color: #aaa;
-  white-space: nowrap;
-
   opacity: 0;
-  transform: translateY(5px);
   transition: 0.2s;
 }
 
 .contact-icon:hover::after {
   opacity: 1;
-  transform: translateY(0);
 }
 
 /* Light mode */
@@ -388,12 +366,13 @@ footer {
   color: #111;
 }
 
+/* ICON BUTTON RESET */
 button.contact-icon {
   all: unset;
-  width: 48px;
-  height: 48px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 48px;
+  height: 48px;
   cursor: pointer;
 }
