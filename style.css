@@ -312,12 +312,12 @@ footer {
   margin-top: 1.5rem;
 }
 
-/* Icon button */
+/* FIX: force proper sizing */
 .contact-icon {
   width: 48px;
   height: 48px;
 
-  display: flex;
+  display: inline-flex; /* IMPORTANT */
   align-items: center;
   justify-content: center;
 
@@ -331,7 +331,9 @@ footer {
 
   position: relative;
 
-  transition: all 0.25s ease;
+  /* FIX: prevent stretching */
+  flex: 0 0 auto;
+  padding: 0; /* remove default button padding */
 }
 
 /* Hover */
@@ -384,4 +386,14 @@ footer {
 
 .light .contact-icon:hover i {
   color: #111;
+}
+
+button.contact-icon {
+  all: unset;
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
