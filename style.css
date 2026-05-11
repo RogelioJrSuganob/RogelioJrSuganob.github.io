@@ -162,6 +162,7 @@ footer {
   bottom: 4.75rem;
   width: min(23rem, calc(100vw - 2rem));
   height: min(36rem, calc(100vh - 7rem));
+  padding: 0.5rem 0.5rem;
   background: #151924;
   border: 1px solid #2b3140;
   border-radius: 1.25rem;
