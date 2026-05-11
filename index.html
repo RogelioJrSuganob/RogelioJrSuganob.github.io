@@ -74,6 +74,35 @@
     <p>© 2026 Rogelio Jr. Suganob</p>
   </footer>
 
+  <div class="chatbot" id="portfolio-chatbot">
+    <section class="chatbot-window" id="chatbot-window" aria-labelledby="chatbot-title" aria-hidden="true">
+      <div class="chatbot-header">
+        <div>
+          <p class="chatbot-label">Portfolio Assistant</p>
+          <h3 id="chatbot-title">Ask about Roj</h3>
+        </div>
+        <button class="chatbot-close" id="chatbot-close" type="button" aria-label="Minimize chatbot">×</button>
+      </div>
+      <div class="chatbot-messages" id="chatbot-messages" role="log" aria-live="polite"></div>
+      <form class="chatbot-form" id="chatbot-form">
+        <label class="sr-only" for="chatbot-input">Ask a portfolio question</label>
+        <input
+          id="chatbot-input"
+          type="text"
+          autocomplete="off"
+          placeholder="Ask about skills, projects, or contact..."
+        />
+        <button type="submit">Send</button>
+      </form>
+    </section>
+    <button class="chatbot-toggle" id="chatbot-toggle" type="button" aria-label="Open portfolio chatbot" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Zm-8 11H7v-2h5v2Zm5-4H7V7h10v2Z"/>
+      </svg>
+    </button>
+  </div>
+
+  <script src="portfolioData.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
