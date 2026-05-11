@@ -187,6 +187,7 @@ footer {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  border-radius: 1.25rem 1.25rem 0 0;
   gap: 1rem;
   padding: 1rem;
   border-bottom: 1px solid #2b3140;
@@ -315,6 +316,7 @@ footer {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 0.6rem;
+  border-radius: 0 0 1.25rem 1.25rem;
   padding: 1rem;
   border-top: 1px solid #2b3140;
   background: #111620;
