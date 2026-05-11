@@ -78,31 +78,221 @@ function portfolioContext() {
   return JSON.stringify(portfolioData, null, 2);
 }
 
+function listItems(items) {
+  return items.map(item => `- ${item}`).join("\n");
+}
+
+function formatProjects() {
+  return portfolioData.projects
+    .map(project => `- **${project.name}:** ${project.description}`)
+    .join("\n");
+}
+
+function hasAny(question, terms) {
+  return terms.some(term => question.includes(term));
+}
+
+function hasWord(question, words) {
+  return words.some(word => new RegExp(`\\b${word}\\b`).test(question));
+}
+
 function fallbackReply(message) {
-  const question = message.toLowerCase();
+  const question = message.toLowerCase().trim();
+  const experience = portfolioData.experience[0];
 
-  if (question.includes("contact") || question.includes("email") || question.includes("github")) {
-    return `You can contact ${portfolioData.name} by email at ${portfolioData.contact.email}. His GitHub is ${portfolioData.contact.github}.`;
+  if (hasAny(question, ["contact", "email", "github", "reach"])) {
+    return `**Contact Roj**
+
+You can reach Roj through:
+
+- **Email:** ${portfolioData.contact.email}
+- **GitHub:** ${portfolioData.contact.github}
+- **Portfolio:** ${portfolioData.contact.website}
+
+*For work opportunities, email is the best starting point.*`;
   }
 
-  if (question.includes("project") || question.includes("queue") || question.includes("gobohol")) {
-    return `${portfolioData.name}'s projects include ${portfolioData.projects.map(project => `${project.name}: ${project.description}`).join(" ")}`;
+  if (hasAny(question, ["resume", "cv"])) {
+    return `**Resume**
+
+${portfolioData.resume.note}
+
+**Resume highlights:**
+- ${portfolioData.summary}
+- ${portfolioData.achievements[0]}
+- Skills include software testing, automation, Excel, Word, Python, React.js, Next.js, and admin support.
+
+You can request Roj's latest resume through **${portfolioData.contact.email}**.`;
   }
 
-  if (question.includes("skill") || question.includes("excel") || question.includes("python") || question.includes("react") || question.includes("next") || question.includes("word")) {
-    return `${portfolioData.name}'s skills include ${portfolioData.skills.join(", ")}. His strengths are ${portfolioData.strengths.join(", ")}.`;
+  if (hasAny(question, ["hire", "why should", "different", "candidate", "applicant"])) {
+    return `**Why Roj Is a Strong Candidate**
+
+Roj brings a useful combination of **software engineering discipline** and **professional support skills**.
+
+**What makes him valuable:**
+- 2.5 years of ECU automotive software unit testing experience
+- Strong attention to detail from quality-critical software work
+- Experience with unit testing, cross-checking, and documentation
+- Automation mindset with a proven 30% productivity improvement
+- Adaptable skill set across coding, admin support, data entry, and AI tools
+
+*He is a good fit for teams that need someone reliable, precise, and quick to learn.*`;
   }
 
-  if (question.includes("experience") || question.includes("background") || question.includes("denso") || question.includes("testing") || question.includes("ecu")) {
-    const experience = portfolioData.experience[0];
-    return `${portfolioData.name} has ${experience.duration} of experience as a ${experience.title} at ${experience.company}. He worked on ECU automotive software unit testing with a focus on quality, precision, documentation, and reliable output.`;
+  if (hasAny(question, ["remote", "work from home"])) {
+    return `**Remote Work Fit**
+
+Roj is a good fit for remote-friendly professional roles because he is:
+
+${listItems(portfolioData.strengths)}
+- Comfortable with software tools, AI tools, and automation workflows`;
   }
 
-  if (question.includes("achievement") || question.includes("resume") || question.includes("highlight")) {
-    return `Resume highlights: ${portfolioData.summary} Key achievement: ${portfolioData.achievements[0]} Strengths: ${portfolioData.strengths.join(", ")}.`;
+  if (hasAny(question, ["virtual assistant", "va", "admin support", "data entry"])) {
+    return `**Virtual Assistant Skills**
+
+Roj is transitioning toward virtual assistant and automation-focused roles.
+
+Relevant skills include:
+
+- Microsoft Excel
+- Microsoft Word
+- Word VBA
+- AI tools
+- Documentation
+- Data entry
+- Admin support
+- Process improvement`;
   }
 
-  return `I focus on ${portfolioData.name}'s professional profile. You can ask me about his skills, projects, software testing background, automation experience, resume highlights, or contact information.`;
+  if (hasAny(question, ["automation", "automate", "workflow", "ai tool", "ai tools"])) {
+    return `**Automation Experience**
+
+Yes. Roj is interested in automation and created a productivity tool that increased work efficiency by **30%**.
+
+His automation-related skills include:
+
+- Python
+- Word VBA
+- AI tools
+- Workflow improvement
+- Documentation and repeatable process design`;
+  }
+
+  if (hasAny(question, ["excel", "word", "vba", "microsoft"])) {
+    return `**Microsoft Excel and Word Skills**
+
+Yes. Roj has productivity and documentation skills that include:
+
+- **Microsoft Excel**
+- **Microsoft Word**
+- **Word VBA**
+- Documentation
+- Data entry
+- Admin support`;
+  }
+
+  if (hasAny(question, ["programming", "coding", "code", "developer", "development"]) || hasWord(question, ["c", "python", "react", "next"])) {
+    return `**Programming Background**
+
+Yes. Roj has programming and software development skills, including:
+
+- **C programming**
+- **Python**
+- **React.js**
+- **Next.js**
+- Software testing and unit testing experience`;
+  }
+
+  if (hasAny(question, ["project", "projects", "portfolio", "queue", "gobohol", "chatbot"])) {
+    return `**Roj's Projects**
+
+Here are the main projects and concepts in Roj's portfolio:
+
+${formatProjects()}`;
+  }
+
+  if (hasAny(question, ["achievement", "achievements", "accomplishment", "productivity", "30%"])) {
+    return `**Main Achievement**
+
+- ${portfolioData.achievements[0]}
+
+This shows Roj's ability to identify repetitive work, improve processes, and build tools that create measurable productivity gains.`;
+  }
+
+  if (hasAny(question, ["experience", "background", "company", "denso", "testing", "unit tester", "cross-checker", "ecu", "software engineering"])) {
+    return `**Roj's Work Experience**
+
+Roj has **${experience.duration} of experience** as a **${experience.title}** at **${experience.company}**.
+
+**Key Experience:**
+${listItems(experience.highlights)}
+
+His background is built around **quality**, **precision**, **documentation**, and **reliable output**.`;
+  }
+
+  if (hasAny(question, ["skill", "skills", "tech stack", "technology", "tools"])) {
+    return `**Roj's Main Skills**
+
+Roj has a strong mix of **software engineering**, **testing**, **automation**, and **productivity** skills.
+
+**Technical Skills:**
+- C programming
+- Python
+- React.js
+- Next.js
+- Software testing
+- Unit testing
+- Cross-checking
+- Automation
+
+**Productivity and Support Skills:**
+- Microsoft Excel
+- Microsoft Word
+- Word VBA
+- AI tools
+- Documentation
+- Data entry
+- Admin support`;
+  }
+
+  if (hasAny(question, ["available", "availability", "looking for", "role", "roles", "career", "work", "opportunity", "opportunities"])) {
+    return `**Career Direction**
+
+${portfolioData.careerDirection}
+
+**Roles that fit Roj well:**
+- Software development support
+- Automation-focused roles
+- Virtual assistant roles
+- Data entry and documentation roles
+- Admin support roles
+- Remote-friendly professional roles`;
+  }
+
+  if (hasAny(question, ["who is", "about roj", "about him", "summary", "profile", "strength", "strengths"]) || hasWord(question, ["roj", "suganob"])) {
+    return `**Who Is Roj Suganob?**
+
+${portfolioData.summary}
+
+**Strengths:**
+${listItems(portfolioData.strengths)}
+
+**Career Direction:**
+${portfolioData.careerDirection}`;
+  }
+
+  return `I focus on **Roj Suganob's professional profile**.
+
+You can ask me about:
+
+- His skills
+- Work experience
+- Projects
+- Automation background
+- Resume highlights
+- Contact information`;
 }
 
 async function createOpenAIReply(message, history = []) {
@@ -113,11 +303,7 @@ async function createOpenAIReply(message, history = []) {
   }
 
   const instructions = [
-    `You are ${portfolioData.chatbot.assistantName}.`,
-    "Answer as a concise, professional portfolio assistant.",
-    "Use only the portfolio data provided as the source of truth.",
-    "If a question is unrelated to the portfolio, politely redirect the user back to Roj's professional profile.",
-    "Do not invent employment history, degrees, phone numbers, or private contact details.",
+    "You are Roj Suganob's professional portfolio assistant. Answer questions using only the provided portfolio knowledge base. Keep responses clear, professional, and easy to read. Use Markdown formatting such as bold text, bullet points, spacing, and short sections. If the question is unrelated to Roj's portfolio, politely redirect the user back to Roj's skills, experience, projects, or contact information. Do not invent information that is not in the knowledge base.",
     `Portfolio data:\n${portfolioContext()}`
   ].join("\n\n");
 
